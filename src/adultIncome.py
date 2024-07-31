@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 from joblib import dump
 
 # Load the dataset
-data = pd.read_csv('adult.csv')
+data = pd.read_csv('./data/adult.csv')
 
 # Display the first few rows of the dataset and the column names
 print(data.head())
