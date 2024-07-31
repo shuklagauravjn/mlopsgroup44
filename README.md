@@ -15,3 +15,9 @@ Step 4: now fire the following commands:<br>
     Step 4.4: git commit -m "initial commit".<br> 
     Step 4.5: git push origin -u feature/v0.1<br>
 Step 5: Check the code is committed into feature/v0.1 branch<br>
+
+**Set Up a CI/CD Pipeline:**
+
+Step 1: python3 -m venv myenv<br> 
+Step 2: source myenv/bin/activate<br> 
+Step 3: pip install -r requirements.txt<br> 
