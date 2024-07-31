@@ -14,49 +14,33 @@ data = pd.read_csv('adult.csv')
 print(data.head())
 print(data.columns)
 
-# Define feature columns and target column based on actual column names
+# Based on the actual column names, update the feature columns and target column
 feature_cols = ['age', 'workclass', 'education', 'marital-status', 'occupation', 'relationship', 'sex']
 target_col = 'income'
 
-# Correct column names to match dataset
-feature_cols_corrected = [col.replace('-', '_') for col in feature_cols]
+# Check for actual column names in the dataset and make sure they match
+actual_columns = list(data.columns)
+print("Actual columns in the dataset:", actual_columns)
 
-# Split the data into features (X) and target (y)
-X = data[feature_cols_corrected]
-y = data[target_col]
+# Map provided feature columns to actual dataset columns
+# Manually replace any discrepancies observed in the column names
+column_mapping = {
+    'age': 'age',
+    'workclass': 'workclass',
+    'education': 'education',
+    'marital-status': 'marital-status',
+    'occupation': 'occupation',
+    'relationship': 'relationship',
+    'sex': 'sex'
+}
 
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Correct feature column names based on actual columns in the dataset
+feature_cols_corrected = [column_mapping[col] for col in feature_cols]
+print("Corrected feature columns:", feature_cols_corrected)
 
-# Define the preprocessing for numeric and categorical features
-numeric_features = ['age']
-numeric_transformer = StandardScaler()
+# Ensure the target column is correct
+target_col_corrected = target_col
+print("Corrected target column:", target_col_corrected)
 
-categorical_features = ['workclass', 'education', 'marital_status', 'occupation', 'relationship', 'sex']
-categorical_transformer = OneHotEncoder(handle_unknown='ignore')
-
-preprocessor = ColumnTransformer(
-    transformers=[
-        ('num', numeric_transformer, numeric_features),
-        ('cat', categorical_transformer, categorical_features)
-    ])
-
-# Create a pipeline that first preprocesses the data and then applies a RandomForestClassifier
-model = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('classifier', RandomForestClassifier(random_state=42))
-])
-
-# Train the model
-model.fit(X_train, y_train)
-
-# Make predictions on the test set
-y_pred = model.predict(X_test)
-
-# Evaluate the model
-accuracy = accuracy_score(y_test, y_pred)
-print(f'Accuracy: {accuracy:.2f}')
-
-# Save the model to a file
-dump(model, 'salary_predictor.joblib')
-print('Model saved as salary_predictor.joblib')
+# Select features and target from the dataset
+X = data
