@@ -25,6 +25,9 @@ Step 3: pip install -r requirements.txt<br>
 **Steps to create docker container:**
 
 Step 1: create Dockerfile<br> 
-Step 2: docker build -t ml-ops-group44-v-01 .<br> 
+Step 2: docker build -t shuklagauravjn/ml-ops-group44-v-01:latest .<br> 
 Step 3: docker run -dp 127.0.0.1:7003:7003 ml-ops-group44-v-01 <br> 
 Step 4: docker ps <br>
+Step 5: docker container ls
+Step 6: docker login -u "shuklagauravjn" -p "XSDSDwewe#" docker.io
+Step 6: docker push shuklagauravjn/ml-ops-group44-v-01:latest 
