@@ -28,6 +28,15 @@ Step 1: create Dockerfile<br>
 Step 2: docker build -t shuklagauravjn/ml-ops-group44-v-01:latest .<br> 
 Step 3: docker run -dp 127.0.0.1:7003:7003 ml-ops-group44-v-01 <br> 
 Step 4: docker ps <br>
-Step 5: docker container ls
-Step 6: docker login -u "shuklagauravjn" -p "XSDSDwewe#" docker.io
-Step 6: docker push shuklagauravjn/ml-ops-group44-v-01:latest 
+Step 5: docker container ls<br>
+Step 6: docker login -u "shuklagauravjn" -p "XSDSDwewe#" docker.io<br>
+Step 7: docker push shuklagauravjn/ml-ops-group44-v-01:latest <br>
+
+**Steps to deploy docker container to minikube:**
+Step 1: brew install minikube<br> 
+Step 2: minikube start <br> 
+Step 3: kubectl create deployment ml-ops-group44-v-01 --image=shuklagauravjn/ml-ops-group44-v-01:latest <br> 
+Step 4: kubectl expose deployment ml-ops-group44-v-01 --type=NodePort --port=8080 <br>
+Step 5: kubectl get services ml-ops-group44-v-01<br>
+Step 6: minikube service ml-ops-group44-v-01 <br>
+Step 7: minikube service ml-ops-group44-v-01<br> 
