@@ -21,3 +21,10 @@ Step 5: Check the code is committed into feature/v0.1 branch<br>
 Step 1: python3 -m venv myenv<br> 
 Step 2: source myenv/bin/activate<br> 
 Step 3: pip install -r requirements.txt<br> 
+
+**Steps to create docker container:**
+
+Step 1: create Dockerfile<br> 
+Step 2: docker build -t ml-ops-group44-v-01 .<br> 
+Step 3: docker run -dp 127.0.0.1:7003:7003 ml-ops-group44-v-01 <br> 
+Step 4: docker ps <br>
