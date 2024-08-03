@@ -2,3 +2,5 @@ pandas
 scikit-learn
 joblib
 notebook
+flake8
+pytest
