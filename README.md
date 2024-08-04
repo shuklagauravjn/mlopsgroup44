@@ -39,4 +39,13 @@ Step 3: kubectl create deployment ml-ops-group44-v-01 --image=shuklagauravjn/ml-
 Step 4: kubectl expose deployment ml-ops-group44-v-01 --type=NodePort --port=8080 <br>
 Step 5: kubectl get services ml-ops-group44-v-01<br>
 Step 6: minikube service ml-ops-group44-v-01 <br>
-Step 7: minikube service ml-ops-group44-v-01<br> 
+Step 7: <br> 
+
+**Steps to install DVC on local mac:**
+Step 1: brew install dvc<br> 
+Step 2: minikube start <br> 
+Step 3: kubectl create deployment ml-ops-group44-v-01 --image=shuklagauravjn/ml-ops-group44-v-01:latest <br> 
+Step 4: kubectl expose deployment ml-ops-group44-v-01 --type=NodePort --port=8080 <br>
+Step 5: kubectl get services ml-ops-group44-v-01<br>
+Step 6: minikube service ml-ops-group44-v-01 <br>
+Step 7: <br> 
