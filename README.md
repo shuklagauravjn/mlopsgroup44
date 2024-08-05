@@ -60,4 +60,4 @@ Step 14: cp data/data.xml /tmp/data.xml<br>
 Step 15: cat /tmp/data.xml >> data/data.xml<br> 
 Step 16: dvc add data/data.xml<br>
 Step 17: dvc push<br>
-Step 18: git commit data/data.xml.dvc -m "Dataset updates"<br>
+Step 18: git commit data/data.xml.dvc -m "Dataset updates."<br>
