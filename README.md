@@ -41,11 +41,23 @@ Step 5: kubectl get services ml-ops-group44-v-01<br>
 Step 6: minikube service ml-ops-group44-v-01 <br>
 Step 7: <br> 
 
-**Steps to install DVC on local mac:**
+**Steps to install DVC on local mac and then doing push pull checkout operation:**
 Step 1: brew install dvc<br> 
-Step 2: minikube start <br> 
-Step 3: kubectl create deployment ml-ops-group44-v-01 --image=shuklagauravjn/ml-ops-group44-v-01:latest <br> 
-Step 4: kubectl expose deployment ml-ops-group44-v-01 --type=NodePort --port=8080 <br>
-Step 5: kubectl get services ml-ops-group44-v-01<br>
-Step 6: minikube service ml-ops-group44-v-01 <br>
-Step 7: <br> 
+Step 2: dvc init <br> 
+Step 3: git status <br> 
+Step 4: git commit -m "Initialize DVC" <br>
+Step 5: dvc get https://github.com/iterative/dataset-registry \
+get-started/data.xml -o data/data.xml <br>
+Step 6: dvc add data/data.xml <br>
+Step 7: git add data/data.xml.dvc data/.gitignore<br> 
+Step 8: git commit -m "Add raw data"<br> 
+Step 9: git add data/data.xml.dvc data/.gitignore<br> 
+Step 10: mkdir /tmp/dvcstore<br> 
+Step 11: dvc remote add -d myremote /tmp/dvcstore<br> 
+Step 12: dvc push<br> 
+Step 13: dvc pull<br> 
+Step 14: cp data/data.xml /tmp/data.xml<br> 
+Step 15: cat /tmp/data.xml >> data/data.xml<br> 
+Step 16: dvc add data/data.xml
+Step 17: dvc push
+Step 18: git commit data/data.xml.dvc -m "Dataset updates"
