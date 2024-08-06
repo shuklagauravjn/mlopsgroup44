@@ -2,11 +2,13 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify, render_template
 import pickle
-
+import joblib 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
-
-dataset = pd.read_csv(r"D:\Delete\mlops_ass\Census-Income-Prediction-master\adult.csv")
+model = joblib.load(open('/Users/gauravshukla/bits/python/src/best_model.pkl', 'rb'))
+#model = pickle.load(open('/Users/gauravshukla/bits/python/src/best_model.pkl', 'rb'))
+#with open('/Users/gauravshukla/bits/python/src/best_model.pkl', 'rb') as file:   
+ #   model = file.read()
+dataset = pd.read_csv('/Users/gauravshukla/bits/python/data/adult.csv')
 
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
@@ -94,6 +96,6 @@ def predict():
     #return render_template('index.html', prediction_text=f'{output}')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="localhost",port=7002,debug=True)
 
 

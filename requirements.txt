@@ -2,3 +2,6 @@ pandas
 scikit-learn
 joblib
 notebook
+mlflow
+imblearn
+joblib 

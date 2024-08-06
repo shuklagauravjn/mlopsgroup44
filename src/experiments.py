@@ -14,7 +14,7 @@ import itertools
 import joblib  # For saving the model to a file
 
 # Load and preprocess dataset
-dataset = pd.read_csv(r"D:\Delete\mlops_ass\Census-Income-Prediction-master\adult.csv")
+dataset = pd.read_csv('/Users/gauravshukla/bits/python/data/adult.csv')
 
 le = LabelEncoder()
 dataset['income'] = le.fit_transform(dataset['income'])
@@ -118,7 +118,7 @@ for model_name, model_info in param_grid.items():
             mlflow.sklearn.log_model(model, "model")
 
             # Log the dataset as an artifact
-            mlflow.log_artifact(r"D:\Delete\mlops_ass\Census-Income-Prediction-master\adult.csv")
+            mlflow.log_artifact('/Users/gauravshukla/bits/python/data/adult.csv')
 
             # Optionally log an example prediction
             example_input = np.array([[20, 10, 3, 5, 40]])

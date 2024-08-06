@@ -6,6 +6,7 @@ WORKDIR /src
 
 # Add the current directory contents into the container at /app
 ADD . /src
+ADD . /script
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
@@ -14,4 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 7003
 
 # Run app.py when the container launches
-CMD ["python3", "src/adultIncome.py"]
+CMD ["./script/mlops44script.sh"]
